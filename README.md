@@ -27,9 +27,10 @@ python3 -m http.server 8080
 
 ## Deployment
 
-This repository is **private**. GitHub Pages on private repositories requires a paid GitHub plan (Pro/Team). Options:
+Hosted on Javier's k3s cluster (k8s-titan, Flux GitOps) at **https://www.techdelivery.es**.
 
-1. **GitHub Pages (needs Pro):** Pages is already wired via `.github/workflows/deploy.yml` — enable it under **Settings → Pages → Source: GitHub Actions** and every push to `main` deploys.
-2. **Free static hosts:** Netlify or Cloudflare Pages can build this repo for free with no configuration (no build step; publish directory `/`).
+- `.github/workflows/publish.yml` builds this site into an nginx image and pushes it to `ghcr.io/techdelivery/techdelivery-site` on every push to `main`.
+- The cluster manifest (`apply/50-apps/techdelivery-site/` in k8s-titan) pins the image **by digest**; a deploy is a one-line digest bump in that repo.
+- To release: push here, read the digest from the workflow log, open the digest-bump PR in k8s-titan.
 
-To use a custom domain (`techdelivery.es`), add it in your host's domain settings and point your DNS there.
+Local container test: `docker build -t td . && docker run -p 8080:8080 td`.
