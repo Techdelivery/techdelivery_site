@@ -1,0 +1,6 @@
+# https://www.techdelivery.es/robots.txt
+# Public marketing site: crawl everything, there is nothing private here.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.techdelivery.es/sitemap.xml

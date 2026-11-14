@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Single-page site: one URL, both languages served from the same page via
+     the in-page EN/ES toggle, so there are no alternate URLs to declare.
+     Add <xhtml:link> alternates here only if the languages ever move to
+     separate paths (e.g. /es/). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.techdelivery.es/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>

@@ -4,6 +4,7 @@ FROM nginxinc/nginx-unprivileged:1.29-alpine
 
 # Site files are the whole app; no build step.
 COPY index.html styles.css app.js theme.js /usr/share/nginx/html/
+COPY robots.txt sitemap.xml /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY security-headers.conf /etc/nginx/security-headers.conf
 
