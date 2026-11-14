@@ -3,8 +3,9 @@
 FROM nginxinc/nginx-unprivileged:1.29-alpine
 
 # Site files are the whole app; no build step.
-COPY index.html styles.css app.js /usr/share/nginx/html/
+COPY index.html styles.css app.js theme.js /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY security-headers.conf /etc/nginx/security-headers.conf
 
 # nginx-unprivileged runs as uid 101 and exposes 8080.
 EXPOSE 8080

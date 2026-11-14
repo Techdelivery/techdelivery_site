@@ -6,17 +6,7 @@
   <title>Techdelivery — A senior engineer who ships</title>
   <meta name="description" content="Techdelivery puts a senior software engineer inside your team: custom development, team augmentation, AI & data engineering, and technical advisory.">
   <link rel="stylesheet" href="styles.css">
-  <script>
-    /* Apply saved theme before first paint to avoid a flash */
-    (function () {
-      var t = null;
-      try { t = localStorage.getItem("td-theme"); } catch (e) { /* ignore */ }
-      if (t !== "dark" && t !== "light") {
-        t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
-      }
-      document.documentElement.dataset.theme = t;
-    })();
-  </script>
+  <script src="theme.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
